@@ -11,8 +11,6 @@ public class Main {
         for(int i = 20; i > 1; i--){
             insert(tree, i);
         }
-
-
         tree.remove(10);
         TreePrinter.print(tree.getRoot());
 
