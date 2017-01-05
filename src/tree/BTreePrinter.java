@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author The author of the printer is unknown.
+ */
 public class BTreePrinter {
 
     public static <T extends Comparable<T>> void printNode(Node<T> root) {
