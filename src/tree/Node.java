@@ -2,12 +2,13 @@ package tree;
 
 import java.util.Objects;
 
+import static tree.Main.currentNode;
 import static tree.NodeColor.BLACK;
 import static tree.NodeColor.RED;
 
 public class Node<T extends Comparable<T>> {
 
-    int id = Main.currentNode++;
+    int id = currentNode++;
 
     private Node<T> parent;
     private Node<T> left;
@@ -35,7 +36,7 @@ public class Node<T extends Comparable<T>> {
         this.value = value;
     }
 
-    public  Node<T> makeBlack() {
+    public Node<T> makeBlack() {
         this.color = BLACK;
         return this;
     }
@@ -93,7 +94,7 @@ public class Node<T extends Comparable<T>> {
     }
 
     public Node<T> getGrandParent() {
-        if(parent == null){
+        if (parent == null) {
             return null;
         }
         return this.parent.getParent();
@@ -103,12 +104,12 @@ public class Node<T extends Comparable<T>> {
         return new NodeRelations<>(getParent(), getGrandParent(), getUncle());
     }
 
-    public boolean hasBothChildren(){
+    public boolean hasBothChildren() {
         return left != null && right != null;
     }
 
     public boolean isLeftChild() {
-        if(parent == null){
+        if (parent == null) {
             throw new IllegalArgumentException("Current node is a root node");
         }
         return parent.left == this;

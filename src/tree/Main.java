@@ -13,7 +13,6 @@ public class Main {
         }
         tree.remove(10);
         TreePrinter.print(tree.getRoot());
-
     }
 
     private static void insert(Tree<Integer> tree, int i) {
